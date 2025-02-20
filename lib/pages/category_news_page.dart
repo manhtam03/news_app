@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-
 import '../model/category_news.dart';
 import '../services/show_category_news.dart';
-import '../widget/category_explore.dart';
+import '../widget/category_detail.dart';
 
 class CategoryNews extends StatefulWidget {
   final String name;
@@ -81,6 +80,7 @@ class _CategoryNewsState extends State<CategoryNews> {
                       image: categories[index].urlToImage,
                       title: categories[index].title,
                       desc: categories[index].desc,
+                      url: categories[index].url,
                     );
                   },
                 ),
@@ -89,54 +89,6 @@ class _CategoryNewsState extends State<CategoryNews> {
           ],
         )
       )
-    );
-  }
-}
-
-class CategoryDetail extends StatelessWidget {
-  final image, title, desc;
-  const CategoryDetail({super.key, this.image, this.title, this.desc,});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(20),
-      child: Column(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Image.network(
-              image,
-              // categories[0].urlToImage!,
-            ),
-          ),
-          SizedBox(height: 5,),
-          Container(
-            width: MediaQuery.of(context).size.width,
-            child: Text(
-              title,
-              style: TextStyle(
-                  color: Color.fromARGB(188, 0, 0, 0),
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold
-              ),
-            ),
-          ),
-          SizedBox(height: 3,),
-          Container(
-            padding: EdgeInsets.only(left: 5, right: 5),
-            width: MediaQuery.of(context).size.width,
-            child: Text(
-              desc,
-              maxLines: 3,
-              style: TextStyle(
-                  color: Color.fromARGB(151, 0, 0, 0),
-                  fontSize: 18
-              ),
-            ),
-          ),
-        ],
-      ),
     );
   }
 }

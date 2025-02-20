@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import '../pages/category_news_page.dart';
 
-class CategoryTitle extends StatelessWidget {
+class CategoryExplore extends StatelessWidget {
   final image, categoryname;
-  const CategoryTitle({super.key, this.image, this.categoryname});
+  const CategoryExplore({super.key, this.image, this.categoryname});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class CategoryTitle extends StatelessWidget {
                 borderRadius: BorderRadius.circular(60),
                 )
             ),
-            Container(
+            SizedBox(
               width: 120,
               height: 120,
               child: Center(
