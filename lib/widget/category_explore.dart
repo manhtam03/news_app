@@ -28,7 +28,7 @@ class CategoryExplore extends StatelessWidget {
               width: 120,
               height: 120,
               decoration: BoxDecoration(
-                color: Color(0xb3000000),
+                color: Colors.black54,
                 borderRadius: BorderRadius.circular(60),
                 )
             ),
