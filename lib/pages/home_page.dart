@@ -5,7 +5,8 @@ import '../model/category_news.dart';
 import '../services/data.dart';
 import '../services/news.dart';
 import '../services/show_category_news.dart';
-import '../widget/category_title.dart';
+import '../widget/category_explore.dart';
+import 'category_news_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -17,7 +18,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<CategoryModel> categories = [];
   List<ArticleModel> articles = [];
-  List<ShowCategoryModel> showCategories = [];
   bool loading = true;
   @override
   void initState() {
@@ -26,14 +26,6 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
-  getCategoryNews() async{
-    ShowCategoryNews showCategoryNews = ShowCategoryNews();
-    await showCategoryNews.getCategoryNews('business');
-    showCategories = showCategoryNews.categories;
-    setState(() {
-      loading = false;
-    });
-  }
 
   getNews() async{
     News newClass = News();
@@ -93,7 +85,7 @@ class _HomePageState extends State<HomePage> {
                 itemCount: articles.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
-                    margin: EdgeInsets.only(bottom: 3, left: 5),
+                    margin: EdgeInsets.only(bottom: 3, left: 5, right: 8),
                     child: Material(
                       elevation: 2,
                       borderRadius: BorderRadius.circular(10),
