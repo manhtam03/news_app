@@ -25,7 +25,6 @@ class _ArticleViewPageState extends State<ArticleViewPage> {
     return Scaffold(
       appBar: AppBar(
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               'News ',
